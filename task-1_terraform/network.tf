@@ -1,4 +1,4 @@
-# This file is for VPC, Subnets and other
+# This file is for VPC, Subnets and routetables
 resource "aws_vpc" "default" {
   cidr_block = "${var.vpc_cidr}"
   enable_dns_hostnames = true
