@@ -1,4 +1,4 @@
-######## This file is for provider 
+######## This file is for provider aws
 provider "aws" {
   #version = "~> 1.24.0"
   version = "~> 2.5.0"
