@@ -15,7 +15,6 @@ variable "dmz_instance_type" { type="list" }
 variable "app_instance_type" { type="list" }
 variable "az" { type="list(string)" default=["a","b","c"] }
 variable "pubkey" { type="string" }
-variable "app_fqdn" { type="string" }
 variable "ssh_allowed" { type="list" }
 variable "certsValid" { type="string" default=false }
 variable "hosted_zone_id" { type="string" }
