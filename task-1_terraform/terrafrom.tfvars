@@ -1,3 +1,4 @@
+##### vars values
 region = "eu-west-1"
 tenant = "APP-DEVEU"
 tf_tenant = "appdeveu"
