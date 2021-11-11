@@ -1,5 +1,5 @@
 
-#! /bin/bash
+#! /bin/bash 
 
 # To use this script we need to first install aws cli module in linux vm and configue it with aws access key
 # configue it with aws access key and secret key using aws configure command
