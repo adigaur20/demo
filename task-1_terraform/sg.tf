@@ -1,4 +1,4 @@
-### to create SG rules for EC2 instance and DB
+### to create SG rules for EC2 instance and DB 
 
 ####################################################
 ## BASTION
