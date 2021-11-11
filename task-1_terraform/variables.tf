@@ -1,5 +1,5 @@
 #
-# Set Variables
+# define Variables
 #
 variable "region" { type="string" }
 variable "tenant" { type="string" }
