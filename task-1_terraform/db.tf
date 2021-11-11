@@ -1,4 +1,4 @@
-### To create Postgres DB
+### To create Postgres DB RDS
 
 resource "aws_db_subnet_group" "dbsg" {
   subnet_ids = [ aws_subnet.data.*.ids ]
