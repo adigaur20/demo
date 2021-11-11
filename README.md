@@ -26,10 +26,15 @@ Postgres RDS DB -> This RDS DB is for application database and launched in priva
 Terraform code explaination ->
 As this is one time activity, I have created tf file for each component 
 aws.tf -> for provider 
+
 db.tf -> for postgres rds db
+
 lb.tf -> apllication load balancer, TG group and listeners
+
 network.tf -> vpc, subnet, routetable etc
+
 sg.tf - security groups
+
 ssl_certs.tf -> ssl certificate for ALB https request
 
 
