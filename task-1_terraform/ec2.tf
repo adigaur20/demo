@@ -1,4 +1,4 @@
-#### To create EC2 instances 
+#### To create EC2 instances for app, dmz
 
 ####################################################
 ## SSH KEY PAIR
