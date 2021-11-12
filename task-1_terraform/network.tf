@@ -61,11 +61,7 @@ resource "aws_route" "dmz_default" {
   destination_cidr_block = "0.0.0.0/0"
   gateway_id             = "${aws_internet_gateway.igw.id}"
 }
-resource "aws_route" "dmz_vpc_peer" {
-  route_table_id = "${aws_route_table.dmz_route_table.id}"
-  destination_cidr_block    = "${var.peer_cidr}"
-  vpc_peering_connection_id = "${aws_vpc_peering_connection.vpc_peer.id}"
-}
+
 resource "aws_route_table_association" "dmz_route_assoc" {
   count          = "${length(var.dmz_networks)}"
   subnet_id      = "${aws_subnet.dmz.*.id[count.index]}"
