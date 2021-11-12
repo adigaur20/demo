@@ -13,9 +13,15 @@ variable "dmz_instances" { type=list(string) }
 variable "app_instances" { type=list(string) }
 variable "dmz_instance_type" { type=list(string) }
 variable "app_instance_type" { type=list(string) }
-variable "az" { type=list(string) default=["a","b","c"] }
+variable "az" {
+type= list(string)
+default = [ "a","b","c" ]
+}
 variable "pubkey" { type=string }
 variable "ssh_allowed" { type=list(string) }
-variable "certsValid" { type=string default=false }
+variable "certsValid" {
+type = string
+default = false
+}
 variable "hosted_zone_id" { type=string }
 
