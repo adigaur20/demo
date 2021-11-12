@@ -74,7 +74,7 @@ resource "aws_route_table_association" "dmz_route_assoc" {
 resource "aws_route_table" "app_route_table" {
   vpc_id       = "${aws_vpc.default.id}"
   count        = "${length(var.app_networks)}"
-  tags {
+  tags = {
     VPC = "${var.tenant}"
     Name = "${var.tenant} ${var.region}${var.az[count.index]} APP RT"
   }
