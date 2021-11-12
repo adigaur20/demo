@@ -100,7 +100,7 @@ resource "aws_security_group_rule" "dmz_22" {
   from_port                = 22
   to_port                  = 22
   protocol                 = "tcp"
-  source_security_group_id = ["1.1.1.1/32"] #Local laptop public IP for SSH access
+  cidr_blocks              = [ "1.1.1.1/32" ] #Local laptop public IP for SSH access
   description              = "SSH access from Bastion"
   security_group_id        = "${aws_security_group.app.id}"
 }
