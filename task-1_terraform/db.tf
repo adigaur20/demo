@@ -19,7 +19,7 @@ resource "aws_db_instance" "db" {
   username             = "dbuser"
   password             = "dbpassword"
   db_subnet_group_name      = aws_db_subnet_group.dbsg.name
-  vpc_security_group_ids = [ aws_security_group.dbdb.id ]
+  vpc_security_group_ids = [ aws_security_group.dbsg.id ]
   backup_window      = "00:00-01:00"
   backup_retention_period = 1
   tags {
