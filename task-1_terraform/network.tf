@@ -11,7 +11,7 @@ resource "aws_subnet" "dmz" {
   vpc_id            = "${aws_vpc.default.id}"
   cidr_block        = "${element(var.dmz_networks, count.index)}"
   availability_zone = "${var.region}${var.az[count.index]}"
-  tags {
+  tags = {
     VPC = "${var.tenant}"
     Name = "${var.tenant} ${var.region}${element(var.az, count.index)} DMZ"
   }
@@ -21,7 +21,7 @@ resource "aws_subnet" "app" {
   vpc_id            = "${aws_vpc.default.id}"
   cidr_block        = "${var.app_networks[count.index]}"
   availability_zone = "${var.region}${var.az[count.index]}"
-  tags {
+  tags = {
     VPC = "${var.tenant}"
     Name = "${var.tenant} ${var.region}${var.az[count.index]} APP"
   }
@@ -31,7 +31,7 @@ resource "aws_subnet" "data" {
   vpc_id            = "${aws_vpc.default.id}"
   cidr_block        = "${var.data_networks[count.index]}"
   availability_zone = "${var.region}${var.az[count.index]}"
-  tags {
+  tags = {
     VPC = "${var.tenant}"
     Name = "${var.tenant} ${var.region}${var.az[count.index]} DATA"
   }
@@ -40,7 +40,7 @@ resource "aws_subnet" "data" {
 # Create IGW
 resource "aws_internet_gateway" "igw" {
   vpc_id = "${aws_vpc.default.id}"
-  tags {
+  tags = {
     VPC = "${var.tenant}"
     Name = "${var.tenant}"
   }
@@ -51,7 +51,7 @@ resource "aws_internet_gateway" "igw" {
 ####################################################
 resource "aws_route_table" "dmz_route_table" {
   vpc_id = "${aws_vpc.default.id}"
-  tags {
+  tags = {
     VPC = "${var.tenant}"
     Name = "${var.tenant} ${var.region} DMZ RT"
   }
