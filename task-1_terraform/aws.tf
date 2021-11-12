@@ -2,11 +2,7 @@
 provider "aws" {
   #version = "~> 1.24.0"
   version = "~> 2.5.0"
-# Lotadi
   region     = "${var.region}"
-  assume_role {
-    role_arn     = "arn:aws:iam::<account_number>:role/Terraform"
-  }
 }
 terraform {
   backend "s3" {
