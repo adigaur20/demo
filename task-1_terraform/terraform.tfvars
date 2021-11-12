@@ -24,3 +24,4 @@ pubkey = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCYTGCrASGJco0XXz1yDjnsfplfZFNLd+
 ### Dummy pub key
 
 ssh_allowed = ["10.0.21.88/32", "10.0.21.126/32"] ### random ips for ssh
+app_fqdn = "demo.com"
