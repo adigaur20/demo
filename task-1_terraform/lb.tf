@@ -26,7 +26,7 @@ resource "aws_lb" "app" {
   subnets            = ["${aws_subnet.dmz.*.id}"]
 
   #enable_deletion_protection = true
-  tags {
+  tags = {
     VPC = "${var.tenant}"
   }
 }
