@@ -1,0 +1,69 @@
+tep 1:First we will start up an instance. In this case, we are starting a t1.micro in the us-east-1 region using the image ami-c7aa60ae in the group default and using the key key-name.
+
+Console - user@hostname ~ $ ec2-run-instances --region us-east-1 ami-c7aa60ae --group default --key key-name --instance-type t1.micro
+
+Output
+
+RESERVATION     r-e98f4f88      902460189751    default
+INSTANCE        i-05948966      ami-c7aa60ae                    pending key-name        0  
+
+Step 2 : Describe the instance to get the Public hostname as under
+
+Console - user@hostname ~ $ ec2-describe-instances --region us-east-1 i-05948966
+
+Output
+
+RESERVATION     r-e98f4f88      902460189751    default
+INSTANCE        i-05948966      ami-c7aa60ae    ec2-184-73-56-99.compute-1.amazonaws.com        RKP-12-31-39-02-14-35.compute-1.internal       running key-name        0               t1.micro        2011-12-09T10:43:22+0000   us-east-1a      aki-805ea7e9                    monitoring-disabled     184.73.56.99    10.248.27.195                   ebs                                     paravirtual     xen             sg-03987d6a        default
+BLOCKDEVICE     /dev/sda1       vol-79a02f14    2021-06-10T10:48:24.000Z
+
+
+Step 3: SSH to the instance
+
+ssh -i ~/.ssh/key-name.pem ec2-user@ec2-184-73-56-99.compute-1.amazonaws.com
+
+
+Step 4: Query
+
+Now we will use curl to access the metadata pages. We will go through and show the various pieces of metadata available to us.
+
+Console - ec2-user@RKP-12-31-39-02-14-35 ~ $ curl http://169.254.169.254/
+
+
+Output
+
+1.0
+2021-06-10
+latest
+
+
+http://169.254.169.254/latest/
+
+dynamic
+meta-data
+user-data
+
+
+http://169.254.169.254/latest/meta-data/
+
+ami-id
+ami-launch-index
+ami-manifest-path
+block-device-mapping/
+hostname
+instance-action
+instance-id
+instance-type
+kernel-id
+local-hostname
+local-ipv4
+mac
+metrics/
+network/
+placement/
+profile
+public-hostname
+public-ipv4
+public-keys/
+reservation-id
+security-groups
