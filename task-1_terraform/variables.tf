@@ -23,5 +23,5 @@ variable "certsValid" {
 type = string
 default = false
 }
-variable "hosted_zone_id" { type=string }
+#variable "hosted_zone_id" { type=string }
 
