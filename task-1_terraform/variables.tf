@@ -3,7 +3,7 @@
 #
 variable "region" { type=string }
 variable "tenant" { type=string }
-
+variable "app_fqdn" { type=string }
 variable "vpc_cidr" { type=string }
 variable "ami_id" { type=string }
 variable "dmz_networks" { type=list(string) }
