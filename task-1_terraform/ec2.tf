@@ -25,7 +25,7 @@ resource "aws_instance" "dmz" {
     volume_type = "gp2"
     volume_size = "20"
   }
-  tags {
+  tags = {
     VPC = "${var.tenant}"
     Name = "${var.tenant} ${var.dmz_instances[count.index]}"
   }
@@ -35,7 +35,7 @@ resource "aws_eip" "dmz" {
   count    = "${length(var.dmz_instances)}"
   instance = "${aws_instance.dmz.*.id[count.index]}"
   vpc      = true
-  tags {
+  tags = {
     VPC = "${var.tenant}"
     Name = "${var.tenant} ${var.dmz_instances[count.index]}"
   }
@@ -58,7 +58,7 @@ resource "aws_instance" "app" {
     volume_type = "gp2"
     volume_size = "20"
   }
-  tags {
+  tags = {
     VPC = "${var.tenant}"
     Name = "${var.tenant} ${var.app_instances[count.index]}"
   }
